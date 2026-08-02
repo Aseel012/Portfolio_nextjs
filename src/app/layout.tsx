@@ -3,6 +3,7 @@ import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import CommandPalette from "@/components/CommandPalette";
+import { Analytics } from "@vercel/analytics/next";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://shaikhaseel.dev"),
@@ -24,9 +25,6 @@ export const viewport: Viewport = {
   ],
 };
 
-// Inline, blocking theme init — runs before paint so there is never a
-// flash of the wrong theme, and it's identical on every route because
-// it lives in the root layout instead of being copy-pasted per page.
 const THEME_INIT = `
 (function () {
   try {
@@ -48,6 +46,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         {children}
         <Footer />
         <CommandPalette />
+        <Analytics />
       </body>
     </html>
   );
