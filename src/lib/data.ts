@@ -251,7 +251,7 @@ export const socials = {
   twitter: "https://x.com/ShaikhMdAseel25",
   medium: "https://medium.com/@shaikhmdaseel",
   email: "shaikhmdaseel@gmail.com",
-  resume: "https://drive.google.com/file/d/1C0lAHvQhzsmQEJ0Tq-01jlQJ_eqFolQ9/view",
+  resume: "https://drive.google.com/file/d/1tA1bxftaP01X9K2Un3Xtk3uVF1K3KkIP/view?usp=sharing",
 };
 
 export const highlights = [
