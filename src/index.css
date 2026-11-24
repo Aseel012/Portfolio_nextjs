@@ -1,0 +1,48 @@
+@import '@fontsource-variable/inter';
+@import '@fontsource/caveat/latin-500.css';
+@import '@fontsource/caveat/latin-600.css';
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --bg: 13 13 13;
+    --frame: 24 24 24;
+    --ink: 244 244 244;
+    --body: 168 168 168;
+    --dim: 142 142 142;
+    --hand: 230 220 200;
+    --line: rgba(255, 255, 255, 0.09);
+    color-scheme: dark;
+  }
+  [data-theme='light'] {
+    --bg: 250 250 250;
+    --frame: 240 239 237;
+    --ink: 23 23 23;
+    --body: 74 74 74;
+    --dim: 95 95 95;
+    --hand: 122 79 32;
+    --line: rgba(0, 0, 0, 0.1);
+    color-scheme: light;
+  }
+  html { background: rgb(var(--bg)); color-scheme: dark; -webkit-text-size-adjust: 100%; }
+  [data-theme='light'] html, html[data-theme='light'] { color-scheme: light; }
+  body {
+    @apply bg-bg font-sans text-body antialiased;
+    font-size: 15px;
+    line-height: 1.7;
+    font-feature-settings: 'cv11', 'ss03';
+    text-rendering: optimizeLegibility;
+    transition: background-color .3s ease, color .3s ease;
+  }
+  ::selection { background: rgb(var(--ink) / 0.2); color: rgb(var(--ink)); }
+  a, button { -webkit-tap-highlight-color: transparent; }
+  :focus-visible { outline: 2px solid rgb(var(--ink) / 0.55); outline-offset: 3px; border-radius: 10px; }
+  ::-webkit-scrollbar { width: 10px; }
+  ::-webkit-scrollbar-thumb { background: rgb(var(--ink) / 0.1); border-radius: 99px; border: 3px solid rgb(var(--bg)); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; scroll-behavior: auto !important; }
+}
